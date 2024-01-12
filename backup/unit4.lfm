@@ -1,0 +1,109 @@
+object Form4: TForm4
+  Left = 371
+  Height = 369
+  Top = 333
+  Width = 712
+  Caption = 'Master/detail'
+  ClientHeight = 369
+  ClientWidth = 712
+  DesignTimePPI = 120
+  LCLVersion = '2.2.6.0'
+  object Label1: TLabel
+    Left = 192
+    Height = 41
+    Top = 32
+    Width = 269
+    Caption = 'Master/Detail Data'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -30
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBGrid1: TDBGrid
+    Left = 50
+    Height = 172
+    Top = 100
+    Width = 254
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource1
+    TabOrder = 0
+  end
+  object DBGrid2: TDBGrid
+    Left = 336
+    Height = 172
+    Top = 100
+    Width = 320
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource2
+    TabOrder = 1
+  end
+  object DataSource1: TDataSource
+    DataSet = ZQuery1
+    Left = 60
+    Top = 160
+  end
+  object DataSource2: TDataSource
+    DataSet = ZQuery2
+    Left = 380
+    Top = 160
+  end
+  object ZConnection1: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = True
+    Properties.Strings = (
+      'AutoEncodeStrings=ON'
+      'controls_cp=CP_UTF8'
+    )
+    Connected = True
+    HostName = 'localhost'
+    Port = 3306
+    Database = 'apkbarang'
+    User = 'root'
+    Protocol = 'mysql-5'
+    LibraryLocation = 'C:\Users\fitriyani\Documents\MYSQL\mysql-5.7.44-winx64\lib\libmysql.dll'
+    Left = 150
+    Top = 160
+  end
+  object ZQuery1: TZQuery
+    Connection = ZConnection1
+    Active = True
+    SQL.Strings = (
+      'SELECT * FROM kategori_barang'
+    )
+    Params = <>
+    Left = 236
+    Top = 160
+  end
+  object ZQuery2: TZQuery
+    Connection = ZConnection2
+    Active = True
+    SQL.Strings = (
+      'SELECT * FROM data_barang'
+    )
+    Params = <>
+    Left = 560
+    Top = 160
+  end
+  object ZConnection2: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = True
+    Properties.Strings = (
+      'AutoEncodeStrings=ON'
+      'controls_cp=CP_UTF8'
+    )
+    Connected = True
+    HostName = 'localhost'
+    Port = 3306
+    Database = 'apkbarang'
+    User = 'root'
+    Protocol = 'mysql-5'
+    LibraryLocation = 'C:\Users\fitriyani\Documents\MYSQL\mysql-5.7.44-winx64\lib\libmysql.dll'
+    Left = 479
+    Top = 160
+  end
+end
